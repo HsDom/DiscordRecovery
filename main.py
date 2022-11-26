@@ -73,10 +73,11 @@ def main():
 
     Account_Index = int(input(f"{Fore.WHITE}Select an account:{Fore.LIGHTBLUE_EX} "))
 
-    try:
+
+    if not os.path.exists(f"{Account.get_username()}_{datetime.date.today()}"):
         os.mkdir(f"{Account.get_username()}_{datetime.date.today()}")
-    except:
-        print(f"{Fore.RED}Folder already exists")
+    else:
+        pass
 
     os.system('cls')
 
@@ -116,5 +117,4 @@ def main():
 
 
 
-if __name__ == '__main__':
-    main()
+main()

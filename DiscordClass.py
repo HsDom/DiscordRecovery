@@ -29,6 +29,9 @@ class Discord:
             return True
         except:
             return False
+    
+    def data(self):
+        return self.USER_DATA
 
     def get_username(self):
         return self.USER_DATA['username']

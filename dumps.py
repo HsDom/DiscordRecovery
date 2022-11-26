@@ -14,7 +14,7 @@ def AccountInfomation(token):
         if not os.path.exists(f"{Account.get_username()}_{datetime.date.today()}/Account Info"):
             os.mkdir(f"{Account.get_username()}_{datetime.date.today()}/Account Info")
     else:
-        print(f'{Fore.RED}Folder dose not exists')
+        print(f'{Fore.RED}Folder does not exists')
         return
 
     print(f'{Fore.WHITE}[{Fore.LIGHTBLUE_EX}+{Fore.WHITE}] Dumping Account Info')
@@ -61,7 +61,7 @@ def AccountBilling(token):
         if not os.path.exists(f"{Account.get_username()}_{datetime.date.today()}/Account Billing"):
             os.mkdir(f"{Account.get_username()}_{datetime.date.today()}/Account Billing")
     else:
-        print(f'{Fore.RED}Folder dose not exists')
+        print(f'{Fore.RED}Folder does not exists')
         return
 
     print(f'{Fore.WHITE}[{Fore.LIGHTBLUE_EX}+{Fore.WHITE}] Dumping Billing Info')
@@ -141,7 +141,7 @@ def AccountGifts(token):
         if not os.path.exists(f"{Account.get_username()}_{datetime.date.today()}/Account Gifts"):
             os.mkdir(f"{Account.get_username()}_{datetime.date.today()}/Account Gifts")
     else:
-        print(f'{Fore.RED}Folder dose not exists')
+        print(f'{Fore.RED}Folder does not exists')
         return
 
     print(f'{Fore.WHITE}[{Fore.LIGHTBLUE_EX}+{Fore.WHITE}] Dumping Gifts')
@@ -175,7 +175,7 @@ def AccountRelationships(token):
         if not os.path.exists(f"{Account.get_username()}_{datetime.date.today()}/Account Friends"):
             os.mkdir(f"{Account.get_username()}_{datetime.date.today()}/Account Friends")
     else:
-        print(f'{Fore.RED}Folder dose not exists')
+        print(f'{Fore.RED}Folder does not exists')
         return
 
     print(f'{Fore.WHITE}[{Fore.LIGHTBLUE_EX}+{Fore.WHITE}] Dumping Friends')
@@ -217,7 +217,7 @@ def AccountMessages(token):
         if not os.path.exists(f"{Account.get_username()}_{datetime.date.today()}/Private Messages"):
             os.mkdir(f"{Account.get_username()}_{datetime.date.today()}/Private Messages")
     else:
-        print(f'{Fore.RED}Folder dose not exists')
+        print(f'{Fore.RED}Folder does not exists')
         return
 
     print(f'{Fore.WHITE}[{Fore.LIGHTBLUE_EX}+{Fore.WHITE}] Dumping Private Messages')
